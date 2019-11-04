@@ -1,0 +1,62 @@
+extends layout
+
+block content
+
+  #search  
+    center  
+      p#wel Select Page
+      
+      form(method = 'POST' action = '/update')
+        if table.users
+          p#wel Users info
+          input#ingredients.form-control(type='text', name='uid', placeholder= 'Enter user id here')
+          br
+          input#ingredients.form-control(type='text', name='name', placeholder= 'Enter user name here')
+          br
+          input#ingredients.form-control(type='text', name='r_count', placeholder= 'Enter review count here')
+          br
+
+        if table.checkins
+          p#wel Checkins info
+          input#ingredients.form-control(type='text', name='bid', placeholder= 'Enter business id here')
+          br
+          input#ingredients.form-control(type='text', name='friday', placeholder= 'Enter friday checkin number here')
+          br
+          
+        if table.business
+          p#wel Business info
+          input#ingredients.form-control(type='text', name='bid', placeholder= 'Enter business id here')
+          br
+          input#ingredients.form-control(type='text', name='bname', placeholder= 'Enter business name here')
+          br
+          input#ingredients.form-control(type='text', name='r_count', placeholder= 'Enter review count here')
+          br
+          input#ingredients.form-control(type='text', name='active', placeholder= 'Enter active here')
+          br
+          input#ingredients.form-control(type='text', name='category', placeholder= 'Enter category here')
+          br
+          input#ingredients.form-control(type='text', name='stars', placeholder= 'Enter stars here')
+          br
+
+        if table.reviews
+          p#wel Reviews info
+          input#ingredients.form-control(type='text', name='uid', placeholder= 'Enter user id here')
+          br
+          input#ingredients.form-control(type='text', name='bid', placeholder= 'Enter business id here')
+          br
+          input#ingredients.form-control(type='text', name='stars', placeholder= 'Enter stars here')
+          br
+          input#ingredients.form-control(type='text', name='text', placeholder= 'Enter text here')
+          br
+          input#ingredients.form-control(type='text', name='rid', placeholder= 'Enter review id here')
+          br
+        
+        button.btn.btn-primary(type='submit') Get result
+
+
+    bottem
+      if result
+        each row in result
+          each item in row
+            p #{item}
+          br

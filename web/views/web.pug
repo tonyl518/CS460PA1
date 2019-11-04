@@ -1,0 +1,12 @@
+doctype html
+html
+    head
+        title= 'ps3'
+        link(rel='stylesheet', href='/stylesheets/style.css')
+    body
+        block content
+            h1= 'Assigment 3'
+            if length
+                p This is a POST request: The string is #{String} and has length of #{length}
+            else
+                p This is a GET request: The string is #{String}.

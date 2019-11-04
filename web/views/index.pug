@@ -1,0 +1,126 @@
+extends layout
+
+block content
+
+  #search  
+    center  
+
+      form(method= 'POST' action = '/')
+        p#wel Enter query here
+        input#ingredients.form-control(type='text', name='ingredients', placeholder= 'Enter query here')
+        button.btn.btn-primary(type='submit') Submit
+
+      form(method = 'POST' action = '/select')
+        lable(for='select')
+        p#wel Select table for SELECT
+        
+        div.checkbox-container
+          label.checkbox-label
+            input(type='checkbox', id='Users', name='Table', value='users')
+            label.input-title(for='Users') Users
+            span.checkbox-custom
+        div.checkbox-container
+          label.checkbox-label
+            input(type='checkbox', id ='Checkins', name='Table', value='checkins')
+            label.input-title(for='Checkins') Checkins
+            span.checkbox-custom
+        div.checkbox-container
+          label.checkbox-label
+            input(type='checkbox', id ='Business', name='Table', value='business')
+            label.input-title(for='Business') Business
+            span.checkbox-custom
+        div.checkbox-container
+          label.checkbox-label
+            input(type='checkbox', id ='Reviews', name='Table', value='reviews')
+            label.input-title(for='Reviews') Reviews
+            span.checkbox-custom
+        button.btn.btn-primary(type='select') SELECT
+
+      form(method = 'GET' action = '/update')
+        lable(for='update')
+        p#wel Select table for UPDATE
+       
+        div.checkbox-container
+          label.checkbox-label
+            input(type='checkbox', id='Users', name='Table', value='users')
+            label.input-title(for='Users') Users
+            span.checkbox-custom
+        div.checkbox-container
+          label.checkbox-label
+            input(type='checkbox', id ='Checkins', name='Table', value='checkins')
+            label.input-title(for='Checkins') Checkins
+            span.checkbox-custom
+        div.checkbox-container
+          label.checkbox-label
+            input(type='checkbox', id ='Business', name='Table', value='business')
+            label.input-title(for='Business') Business
+            span.checkbox-custom
+        div.checkbox-container
+          label.checkbox-label
+            input(type='checkbox', id ='Reviews', name='Table', value='reviews')
+            label.input-title(for='Reviews') Reviews
+            span.checkbox-custom
+        button.btn.btn-primary(type='update') UPDATE
+
+      form(method = 'GET' action = '/insert')
+        lable(for='insert')
+        p#wel Select table for INSERT
+        
+        div.checkbox-container
+          label.checkbox-label
+            input(type='checkbox', id='Users', name='Table', value='users')
+            label.input-title(for='Users') Users
+            span.checkbox-custom
+        div.checkbox-container
+          label.checkbox-label
+            input(type='checkbox', id ='Checkins', name='Table', value='checkins')
+            label.input-title(for='Checkins') Checkins
+            span.checkbox-custom
+        div.checkbox-container
+          label.checkbox-label
+            input(type='checkbox', id ='Business', name='Table', value='business')
+            label.input-title(for='Business') Business
+            span.checkbox-custom
+        div.checkbox-container
+          label.checkbox-label
+            input(type='checkbox', id ='Reviews', name='Table', value='reviews')
+            label.input-title(for='Reviews') Reviews
+            span.checkbox-custom
+        button.btn.btn-primary(type='insert') INSERT
+
+      form(method = 'GET' action = '/delete')
+        lable(for='delete')
+        p#wel Select table for DELETE
+        
+        div.checkbox-container
+          label.checkbox-label
+            input(type='checkbox', id='Users', name='Table', value='users')
+            label.input-title(for='Users') Users
+            span.checkbox-custom
+        div.checkbox-container
+          label.checkbox-label
+            input(type='checkbox', id ='Checkins', name='Table', value='checkins')
+            label.input-title(for='Checkins') Checkins
+            span.checkbox-custom
+        div.checkbox-container
+          label.checkbox-label
+            input(type='checkbox', id ='Business', name='Table', value='business')
+            label.input-title(for='Business') Business
+            span.checkbox-custom
+        div.checkbox-container
+          label.checkbox-label
+            input(type='checkbox', id ='Reviews', name='Table', value='reviews')
+            label.input-title(for='Reviews') Reviews
+            span.checkbox-custom
+        button.btn.btn-primary(type='delete') DELETE
+
+    bottem
+      if result
+        each row in result
+          each item in row
+            p #{item}
+          br
+        
+        
+      
+        

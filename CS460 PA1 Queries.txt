@@ -1,0 +1,427 @@
+Query1: SELECT U.uid FROM users U WHERE review_count >=1
+
+Query2: SELECT DISTINCT U.name FROM users U WHERE review_count <=2
+
+Query3: SELECT B.bid FROM business B WHERE B.active = false
+
+Query4: SELECT DISTINCT B.bname FROM business B WHERE B.stars >=4 AND B.category = 'Pizza Restaurants'
+
+Query5: SELECT COUNT(c.bid) FROM checkins C WHERE c.Friday > 0 
+
+Query6: SELECT R.text FROM reviews R, business B WHERE B.bname = 'Arcadia Tavern' AND B.bid = R.bid
+
+Query7: SELECT DISTINCT B.bname FROM business B, reviews R WHERE B.bid = r.bid GROUP BY B.bid,B.bname,R.stars HAVING R.stars = 1 OR R.stars = 2
+
+Query8: SELECT AVG(B.stars), SUM(B.review_count) FROM business B WHERE B.bname = 'KFC'
+
+Query9: SELECT B.bid FROM business B ORDER BY B.review_count DESC LIMIT 10
+
+Query10: SELECT U.name FROM users U WHERE U.review_count >= ALL (SELECT MAX(U2.review_count) FROM users U2)
+
+Result:
+Query1:
+--5hzxWLz5ozIg6OMo6tpQ
+
+
+--65q1FpAL_UQtVZ2PTGew
+
+
+--AqBuo717RyacADExYbSA
+
+
+--dofeOsROFpm0q_dmqTTA
+
+
+--lMCM6K8-9NTvPlbCMXEA
+
+
+--LzFD0UDbYE-Oho3AhsOg
+
+
+--M-cIkGnH1KhnLaCOmoPQ
+
+
+--RD0Z_F0tV4L-AzhOzXYA
+
+
+--rlgfAvvi0BtfRDA1p-VQ
+
+
+--VxRvXk3b8FwsSbC2Zpxw
+
+
+--xayi5_x00uSNZZGQgY6A
+
+
+-01H9S7YxFrhRgNdvxmaVQ
+
+
+Query2:
+Keaka
+
+
+Erick
+
+
+Edris
+
+
+Belma
+
+
+Chelsie
+
+
+Carolyn
+
+
+Jami
+
+
+Daylin
+
+
+Ali's
+
+
+Victoria
+
+
+Robby
+
+
+ingram
+
+
+Junny
+
+
+Humza
+
+
+Thom
+
+
+Rita
+
+
+todd
+
+
+Jakki
+
+
+Qian
+
+
+Henry
+
+
+dora
+
+
+Hollye
+
+
+Mary Jo
+
+
+jordan
+
+
+Kenna
+
+
+PJ
+
+
+Valerie
+
+
+Carlyn
+
+
+Manish
+
+
+Sabra
+
+
+Jeanine
+
+
+Champ
+
+
+Christina
+
+
+Leni
+
+
+Alain
+
+
+Katonna
+
+
+Angelica
+
+
+Rebekkah
+
+
+Augusta
+
+
+Melodie
+
+
+Sphynxie
+
+
+Tacky
+
+
+Kathi
+
+
+Query3:
+-8wyZkzfBmCFkMwCGcR4PQ
+
+
+-A5CFmkgdMEggaihtyxX4Q
+
+
+-CZ78c-H3tTxpP-uQ09CWw
+
+
+-eE4PAWu5FBRnAvbIMzWqg
+
+
+-ev01HlCKf7CYsh8ZXG_7w
+
+
+-fsCfTYEnJ4s6yStgBnQig
+
+
+-Gse8l_ec33gkWgotCLsew
+
+
+-h9LochyBgKpsLwNXfTiOw
+
+
+-hWSt4JO2zT7zd7QzLZY9Q
+
+
+-hzkQ8YIkExQse3vX0HOcg
+
+
+-I3Cu9rLQXtL5us5wdy8tA
+
+
+-JL0CWSLkkzFHZXlctnf8A
+
+
+-KEU36ohRQb19mrbA65Y3Q
+
+
+-kVXDEqGHOWKxQ3EhvFgVA
+
+
+-Mf4I8Jr_Vly37Z3Mgf0zQ
+
+
+0G-zqtH6hRTu4uxRwA-Gpg
+
+
+-q_VodbABJygOSuv86LOtw
+
+
+-sHaV6At__T1RJQXiR6d0g
+
+
+-SS0C3OoPhVVBFCFfDWB2A
+
+
+-UT6IHfVW_2yzz1bf8WI5g
+
+
+-Vp12-UIQIh2zeM6SPj9FA
+
+
+Query4:
+Humble Pie
+
+
+Chrissy's Nino's Pizzeria
+
+
+Otto Pizza & Pastry
+
+
+Slice of Sicily
+
+
+Papa Murphy's
+
+
+NYPD Pizza
+
+
+Rome's Pizza
+
+
+Nino's Pizzeria 2
+
+
+Carmine's Pizza
+
+
+Jimmy & Joe's Pizzeria
+
+
+Zpizza
+
+
+Pat's Pizza Plus
+
+
+Z Pizza
+
+
+La Grande Orange Pizzeria
+
+
+Jimmy and Joe's Pizzeria
+
+
+Ballpark Pizza & Subs
+
+
+Vito's Pizza
+
+
+Pizza Fresh
+
+
+Papa Murphys
+
+
+Pino's Pizza Al Centro
+
+
+Argentos Pizza
+
+
+Pizza Hut
+
+
+Rosati's Pizza
+
+
+Uno Chicago Grill
+
+
+Query5:
+7418
+
+
+Query6:
+We were told that this was a good place to go with our 2 kids. We arrived at 5:45 on a saturday evening
+
+
+Query7:
+Amsterdam
+
+
+Arcadia Tavern
+
+
+Barnes & Noble Booksellers
+
+
+Chico's Tacos
+
+
+Chompie's Restaurant & Bakery
+
+
+Dozo
+
+
+Gelato 64
+
+
+Ivy Nails & Spa
+
+
+Joe's Crab Shack
+
+
+Mamma Mia Subs & Brick Oven Pizza
+
+
+NoRTH
+
+
+Parnian Furniture Design & Manufacturin
+
+
+Pars Persian Cuisine
+
+
+Pretty Nails & Spa by BN
+
+
+Superstition Springs Lexus
+
+
+T.C. Eggington's
+
+
+Tee Pee Mexican Food
+
+
+Thai Rama Restaurant
+
+
+Query8:
+1.5000000000000000
+
+26
+
+
+Query9:
+hW0Ne_HTHEAgGF1rAdmR-g
+
+
+VVeogjZya58oiTxK7qUjAQ
+
+
+JokKtdXU7zXHcr20Lrk29A
+
+
+ntN85eu27C04nwyPa8IHtw
+
+
+EWMwV5V9BxNs_U6nNVMeqw
+
+
+V1nEpIRmEa1768oj_tuxeQ
+
+
+WNy1uzcmm_UHmTyRo5IA
+
+
+SDwYQ6eSu1htn8vHWv128g
+
+
+-sC66z4SO3tR7nFCjfQwuQ
+
+
+QnAzW6KMSciUcuJ20oI3Bw
+
+
+Query10:
+Kim

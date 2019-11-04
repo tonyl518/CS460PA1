@@ -1,0 +1,143 @@
+extends layout
+
+block content
+
+  #search  
+    center  
+      p#wel Select Page
+      p#wel Check the checkbox for values that you wish to view
+      
+      form(method = 'POST' action = '/select')
+        if table.users
+          p#wel Users info
+          div.checkbox-container
+          label.checkbox-label
+            input(type='checkbox', id='Users', name='index', value='uid')
+            label.input-title(for='uid') User id
+            span.checkbox-custom
+          input#ingredients.form-control(type='text', name='uid', placeholder= 'Enter user id here')
+          br
+          div.checkbox-container
+          label.checkbox-label
+            input(type='checkbox', id='Users', name='index', value='name')
+            label.input-title(for='name') Name
+            span.checkbox-custom
+          input#ingredients.form-control(type='text', name='name', placeholder= 'Enter user name here')
+          br
+          div.checkbox-container
+          label.checkbox-label
+            input(type='checkbox', id='Users', name='index', value='rcount')
+            label.input-title(for='rcount') Review count
+            span.checkbox-custom
+          input#ingredients.form-control(type='text', name='review_count', placeholder= 'Enter review count here')
+          br
+
+        if table.checkins
+          p#wel Checkins info
+          div.checkbox-container
+          label.checkbox-label
+            input(type='checkbox', id='Users', name='index', value='bid')
+            label.input-title(for='bid') Business id
+            span.checkbox-custom
+          input#ingredients.form-control(type='text', name='bid', placeholder= 'Enter business id here')
+          br
+          div.checkbox-container
+          label.checkbox-label
+            input(type='checkbox', id='Users', name='index', value='friday')
+            label.input-title(for='friday') Friday checkins
+            span.checkbox-custom
+          input#ingredients.form-control(type='text', name='friday', placeholder= 'Enter friday checkin number here')
+          br
+          
+        if table.business
+          p#wel Business info
+          div.checkbox-container
+          label.checkbox-label
+            input(type='checkbox', id='Users', name='index', value='bid')
+            label.input-title(for='bid') Business id
+            span.checkbox-custom
+          input#ingredients.form-control(type='text', name='bid', placeholder= 'Enter business id here')
+          br
+          div.checkbox-container
+          label.checkbox-label
+            input(type='checkbox', id='Users', name='index', value='bname')
+            label.input-title(for='bname') Business Name
+            span.checkbox-custom
+          input#ingredients.form-control(type='text', name='bname', placeholder= 'Enter business name here')
+          br
+          div.checkbox-container
+          label.checkbox-label
+            input(type='checkbox', id='Users', name='index', value='review_count')
+            label.input-title(for='review_count') Review count
+            span.checkbox-custom
+          input#ingredients.form-control(type='text', name='review_count', placeholder= 'Enter review count here')
+          br
+          div.checkbox-container
+          label.checkbox-label
+            input(type='checkbox', id='Users', name='index', value='active')
+            label.input-title(for='active') Active
+            span.checkbox-custom
+          input#ingredients.form-control(type='text', name='active', placeholder= 'Enter active here')
+          br
+          div.checkbox-container
+          label.checkbox-label
+            input(type='checkbox', id='Users', name='index', value='category')
+            label.input-title(for='category') Category
+            span.checkbox-custom
+          input#ingredients.form-control(type='text', name='category', placeholder= 'Enter category here')
+          br
+          div.checkbox-container
+          label.checkbox-label
+            input(type='checkbox', id='Users', name='index', value='stars')
+            label.input-title(for='stars') Stars
+            span.checkbox-custom
+          input#ingredients.form-control(type='text', name='stars', placeholder= 'Enter stars here')
+          br
+
+        if table.reviews
+          p#wel Reviews info
+          div.checkbox-container
+          label.checkbox-label
+            input(type='checkbox', id='Users', name='index', value='uid')
+            label.input-title(for='uid') User id
+            span.checkbox-custom
+          input#ingredients.form-control(type='text', name='uid', placeholder= 'Enter user id here')
+          br
+          div.checkbox-container
+          label.checkbox-label
+            input(type='checkbox', id='Users', name='index', value='bid')
+            label.input-title(for='bid') Business id
+            span.checkbox-custom
+          input#ingredients.form-control(type='text', name='bid', placeholder= 'Enter business id here')
+          br
+          div.checkbox-container
+          label.checkbox-label
+            input(type='checkbox', id='Users', name='index', value='stars')
+            label.input-title(for='stars') Stars
+            span.checkbox-custom
+          input#ingredients.form-control(type='text', name='stars', placeholder= 'Enter stars here')
+          br
+          div.checkbox-container
+          label.checkbox-label
+            input(type='checkbox', id='Users', name='index', value='text')
+            label.input-title(for='text') Text
+            span.checkbox-custom
+          input#ingredients.form-control(type='text', name='text', placeholder= 'Enter text here')
+          br
+          div.checkbox-container
+          label.checkbox-label
+            input(type='checkbox', id='Users', name='index', value='rid')
+            label.input-title(for='rid') Review id
+            span.checkbox-custom
+          input#ingredients.form-control(type='text', name='rid', placeholder= 'Enter review id here')
+          br
+        
+        button.btn.btn-primary(type='submit') Get result
+
+
+    bottem
+      if result
+        each row in result
+          each item in row
+            p #{item}
+          br
